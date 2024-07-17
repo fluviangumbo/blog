@@ -1,142 +1,117 @@
-# 05 Project 1: Interactive Front-End Application
+# 04 Web APIs: Personal Blog
 
-At the conclusion of each phase of this course, you’ll work with a group of your fellow students to create a **project**. A project is collaborative work among a group of developers to create an application that solves a real-world problem. Projects model the experience you’ll encounter in every development role at any company, from large multinational businesses to small startups. Coding is collaborative.
+## Your Task
 
-A project is a bit different from the Challenge assignments you’ve worked on so far. One of the biggest differences is that you’ll no longer build an application by yourself! This has some advantages&mdash;you won’t have to do all of the work, you can divide up duties, and you can share skills and knowledge with other developers and lean on their strengths. This can also be challenging if you’re used to working alone. Constant communication and time management are just two of the skills you’ll need to practice to make sure everyone in your group works together to complete the project. 
+In this challenge, you'll create a two-page website where users will input and view blog posts. It includes building a content form, dynamically rendering blog posts, and implementing a light/dark mode toggle. As you code, you'll gain practical JavaScript experience, explore the Document Object Model's power, and set the stage for more advanced tasks.
 
-Projects won’t provide you with a user story or acceptance criteria, because you and your group will create them once you decide which real-world problem your application will solve. This lack of constraints can be freeing in a way, because you have room to build what you want, but it also means that you have to decide what those constraints are before you can start working.
+## User Story
 
-Finally, a project requires a presentation, because you’re trying to convince an audience that it serves a purpose. Your instructional staff and fellow students are investors, and you’re pitching your creation to them&mdash;an experience that developers are required to do frequently. Your presentation is just as important as the actual project, so take it just as seriously.
+```md
+AS A marketing student,
+I WANT a personal blog
+SO THAT I can showcase my thoughts and experiences.
+```
 
-## Project Requirements
+## Acceptance Criteria
 
-You and your group will use everything you’ve learned over the past four modules to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfill the following requirements:
+```md
+GIVEN a personal blog
+WHEN I load the app,
+THEN I am presented with the landing page containing a form with labels and inputs for username, blog title, and blog content.
+WHEN I try to submit a form without a username, title, or content,
+THEN I am presented with a message that prompts me to complete the form.
+WHEN I submit the form,
+THEN blog post data is stored to localStorage.
+WHEN the form submits,
+THEN I am redirected to the posts page.
+WHEN I view the posts page,
+THEN I am presented with a header, with a light mode/dark mode toggle, and a "Back" button.
+WHEN I click the light mode/dark mode toggle,
+THEN the page content's styles update to reflect the selection.
+WHEN I click the "Back" button,
+THEN I am redirected back to the landing page where I can input more blog entries.
+WHEN I view the main content,
+THEN I am presented with a list of blog posts that are pulled from localStorage.
+WHEN I view localStorage,
+THEN I am presented with a JSON array of blog post objects, each including the post author's username, title of the post, and post's content.
+WHEN I take a closer look at a single blog entry in the list,
+THEN I can see the title, the content, and the author of the post.
+```
 
-* Be deployed to GitHub Pages.
+## Mock-Up
 
-* Be interactive (i.e., accept and respond to user input).
+The following animation demonstrates the application functionality:
 
-* Use a CSS framework (see suggestions).
-
-* Include at least one modal instead of native browser alert, confirm, or prompt functionality. Look into the CSS framework's documentation for more information!
-
-* Use client-side storage to store persistent data.
-
-* Be responsive.
-
-* Have a polished UI.
-
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
-* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
-### CSS Frameworks
-
-One of the requirements for this project is to incorporate a CSS framework into your application.
-
-> **hint** There are different ways to add these frameworks, but for the purposes of this front-end project, you'll need to use the **CDN option**.
-
-Look into one of the following CSS frameworks and add it to your project:
-
-* [Bootstrap](https://getbootstrap.com/)
-
-* [Tailwind CSS](https://tailwindcss.com/)
-
-* [Materialize](https://materializecss.com/)
-
-* [Pure CSS](https://purecss.io/)
-
-* [Semantic UI](https://semantic-ui.com/)
-
-* [Foundation](https://get.foundation/)
-
-* [Bulma](https://bulma.io/)
-
-> **note** There are a lot of CSS frameworks out there&mdash;this is just a list to get you started. Feel free to use one not included in this list!
-
-## Presentation Requirements
-
-Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following: 
-
-* Elevator pitch: a one minute description of your application
-
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to the deployed application and the GitHub repository
+![A user adds a blog through a form, then the post appears on the following page.](./Assets/100-web-apis-challenge-demo.gif)
 
 ## Grading Requirements
 
-This project is graded based on the following criteria:
+This Challenge is graded based on the following criteria:
 
-### Technical Acceptance Criteria: 25%
+### Landing Page 35%
 
-* Satisfies the following code requirements:
+The landing page should contain the following HTML (5 pts):
 
-  * Application uses client-side storage to store persistent data.
+* A `form` element that contains the following:
 
-  * Application uses a CSS framework.
+  * An `input` element whose label and id are `username`.
 
-  * Application must include at least one modal instead of native browser alert, confirm, or prompt functionality. Look into the CSS framework's documentation for more information!
+  * An `input` element whose label and id are `title`.
 
-  * Application is interactive (accepts and responds to user input).
+  * A `textarea` element whose label and id are `content`.
 
-### Concept 10%
+  * A `p` element whose id is `error`.
 
-* Application should be a unique and novel idea.
+The form must use the following logic:
 
-* Your group should clearly and concisely articulate your project idea.
+* Display the error message `"Please complete the form."` when the form is submitted with empty fields. (10 pts)
 
-### Deployment: 20%
+* Store form data in local storage when submitted with valid data. (10 pts)
 
-* Application deployed at live URL and loads with no errors.
+  * Blog post objects in local storage must contain `username`, `title`, and `content` properties. (5 pts)
 
-* Application GitHub URL submitted.
+* Redirect to the blog page when valid data is submitted. (5 pts)
 
-### Repository Quality: 10%
+### Blog Page HTML 10%
 
-* Repository has a unique name.
+The blog page must contain the following HTML:
 
-* Repository follows best practices for file structure and naming conventions.
+* A `header` element that contains (5 pts):
 
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+  * A light mode/dark mode toggle. The toggle element can be anything you like, but the id must be `toggle`.
 
-* Repository contains multiple descriptive commit messages.
+  * A "Back" button with an id of `back`.
 
-* Repository contains a quality README file with description, screenshot, and link to deployed application.
+* A `main` element. (5 pts)
 
-### Application Quality: 15%
+### Toggle Logic 20%
 
-* Application user experience is intuitive and easy to navigate.
+When the light mode/dark mode toggle is clicked:
 
-* Application user interface style is clean and polished.
+* The styles of the page change to match the mode. (10 pts)
 
-* Application is responsive.
+* The `--circle-color` attribute changes to match the mode. (10 pts)
 
-### Presentation 10%
+### Blog Post Logic 35%
 
-* Your group should present using a slide deck.
+The Blog Post page must perform the following:
 
-* Every group member should speak during the presentation.
+* Render blog posts to the page with data pulled from `localStorage`. (10 pts)
 
-* Your presentation should follow the [Project Presentation Template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing).
+  * Rendered blog posts must include the author's `username`, and the post's `title` and `content`. (10 pts)
 
-### Collaboration 10%
+  * If no blog posts are found in `localStorage`, display a message that states: `"No Blog posts yet..."`. (10 pts)
 
-* There are no major disparities in the number of GitHub contributions between group members.
+* Redirect the user to the landing page when the "Back" button is clicked. (5 pts)
 
-## How to Submit Your Interactive Front-End Project
+## How to Submit the Challenge
 
-**Each member of your group** is required to submit the following for review:
+Follow the link below to open this auto-graded assignment in a new tab. Once you have completed the assignment on the Ed platform, submit it, and you will return to Bootcamp Spot.
 
-* The URL of the deployed application.
+> **note** You are allowed to miss up to two Challenge assignments and still earn your certificate. If you complete all Challenge assignments, your lowest two grades will be dropped. If you wish to skip this assignment, click Next, and move on to the next Module.
 
-* The URL of the GitHub repository, with a unique name and a README describing the project.
+> **important** No matter how difficult the course becomes, you must always turn in original work. Plagiarism is not tolerated. If your instructional or support staff determine that you have plagiarized work, your Student Success Advisor will determine the appropriate course of action based on university policy. Such actions may include, but are not limited to, a documented plagiarism discussion, an incomplete or failing grade assignment, or ineligibility for graduation.
 
 ---
+
 © 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
