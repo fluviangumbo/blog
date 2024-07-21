@@ -15,24 +15,26 @@
 <body class="light">
   <header>
     <h1>Blog Homepage</h1>
-    <span id="toggle"></span>
+    <button id="toggle"></button>
   </header>
   <main>
     <!-- TODO: Create landing page elements to match the mock-up provided. At the very least, include the following elements. -->
     <aside>
       <h2>My First Blog</h2>
     </aside>
-    <h2>What's on your mind?</h2>
-    <form id="blogpost">
-      <label>Username</label>
-      <input id="username" name="username" placeholder="Username">
-      <label>Title</label>
-      <input id="title" name="title" placeholder="Title">
-      <label>Content</label>
-      <textarea id="content" name="content" placeholder="Content"></textarea>
-      <button type="submit">Submit</button>
-      <p id="error"></p>
-    </form>
+    <section>
+      <h2>What's on your mind?</h2>
+      <form id="blogpost">
+        <label for="username">Username</label>
+        <input id="username" name="username" placeholder="Username" type="text">
+        <label for="title">Title</label>
+        <input id="title" name="title" placeholder="Title" type="text">
+        <label>Content</label>
+        <textarea id="content" name="content" placeholder="Content" type="text"></textarea>
+        <p id="error"></p>
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
   </main>
   <footer></footer>
 </body>
