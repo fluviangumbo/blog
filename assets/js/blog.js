@@ -19,12 +19,12 @@ function noPosts () {
 function renderBlogList () {
     const blogs = readLocalStorage();
 
-    if (!blogs.length) {
+    if (blogs.length < 1) {
         noPosts();
         return;
     }
 
-    for (blog in blogs) {
+    for (const blog of blogs) {
         const post = postBuilder('article', '', mainEl);
         post.setAttribute('class', 'card');
 
