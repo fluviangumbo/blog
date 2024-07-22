@@ -20,11 +20,7 @@ function blogSubmission(event) {
         content: content,
     };
 
-    const blogs = readLocalStorage();
-    blogs.push(newPost);
-
-    const priorContent = JSON.stringify(blogs);
-    localStorage.setItem('blogs', priorContent);
+    storeLocalStorage(newPost);
 
     redirectPage('blog.html');
 };

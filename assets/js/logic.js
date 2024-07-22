@@ -38,9 +38,11 @@ function readLocalStorage() {
 // TODO: Create a function called `storeLocalStorage` that takes a given object and saves the new data to the existing blog data in local storage.
 
 //I think I already accomplished this on form.js
-// function storeLocalStorage() {
-  
-// }
+function storeLocalStorage(newContent) {
+  const blogs = readLocalStorage();
+  blogs.push(newContent);
+  localStorage.setItem('blogs', JSON.stringify(blogs));
+}
 
 // ! Use the following function whenever you need to redirect to a different page
 
